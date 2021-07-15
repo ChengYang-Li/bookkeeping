@@ -1,13 +1,15 @@
+import os
+
 bucklists = []
 
+if os.path.isfile('new_result.csv'): # 檢查檔案是否存在
 # 讀取檔案
-with open('new_result.csv', 'r', encoding = 'utf-8') as f:
-	for line in f:
-		if '商品,價格' in line:
-			continue
-		product, price = line.strip().split(',')
-		bucklists.append([product, price])
-
+	with open('new_result.csv', 'r', encoding = 'utf-8') as f:
+		for line in f:
+			if '商品,價格' in line:
+				continue
+			product, price = line.strip().split(',')
+			bucklists.append([product, price])
 # 使用者輸入
 while True:
 	product = input('輸入商品，按q離開: ')
