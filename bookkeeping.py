@@ -17,6 +17,7 @@ while True:
 	# tmp.append(name.strip())
 	# tmp.append(price.strip())
 	# 也可以寫成這樣 tmp = [name.strip(), price.strip()]
+	# products.append(tmp)
 	products.append([name.strip(), price.strip()])
 
 print('目前清單如下: ', products, '共計有', len(products), '項商品')
@@ -28,4 +29,12 @@ for i in products:
 
 for p in products:
 	print(p[0], '的價格是', p[1])
+
+with open('result.txt', 'w') as f:
+	for line in products:
+		f.write('買了:' + line[0] + ', 花了:' + line[1] + '元' + '\n')
+
+with open('result.csv', 'w') as f:
+	for line in products:
+		f.write(line[0] + ', ' + line[1] + '\n')
 
