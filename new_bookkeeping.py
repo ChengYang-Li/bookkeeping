@@ -45,4 +45,5 @@ def main():
 	printlist(bucklists)
 	write_file(filename, bucklists)
 
-main()
+if __name__ == '__main__':
+	main()
